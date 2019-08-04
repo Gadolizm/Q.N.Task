@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,11 @@
 		8B779FA522F6539F005C071A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B779FA322F6539F005C071A /* Main.storyboard */; };
 		8B779FA722F653A1005C071A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B779FA622F653A1005C071A /* Assets.xcassets */; };
 		8B779FAA22F653A1005C071A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B779FA822F653A1005C071A /* LaunchScreen.storyboard */; };
+		8B779FB222F65958005C071A /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B779FB122F65958005C071A /* UIView+constraints.swift */; };
+		8B779FB422F659E3005C071A /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B779FB322F659E3005C071A /* CountryViewController.swift */; };
+		8B779FB622F65AA8005C071A /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B779FB522F65AA8005C071A /* cities.json */; };
+		8B779FBC22F65B6E005C071A /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B779FBB22F65B6E005C071A /* Sequence+Extension.swift */; };
+		F5EFAD431242FA76EE0126DF /* Pods_QuaNode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44E39A7243897320B929616 /* Pods_QuaNode.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,13 @@
 		8B779FA622F653A1005C071A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B779FA922F653A1005C071A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B779FAB22F653A1005C071A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B779FB122F65958005C071A /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		8B779FB322F659E3005C071A /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		8B779FB522F65AA8005C071A /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
+		8B779FBB22F65B6E005C071A /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		8E0D0046E88ABFE505F8CE9F /* Pods-QuaNode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuaNode.release.xcconfig"; path = "Target Support Files/Pods-QuaNode/Pods-QuaNode.release.xcconfig"; sourceTree = "<group>"; };
+		AAA6BEECCFD748FDFF2DB185 /* Pods-QuaNode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuaNode.debug.xcconfig"; path = "Target Support Files/Pods-QuaNode/Pods-QuaNode.debug.xcconfig"; sourceTree = "<group>"; };
+		B44E39A7243897320B929616 /* Pods_QuaNode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuaNode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5EFAD431242FA76EE0126DF /* Pods_QuaNode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C24F5D89DB394215B17D1BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B44E39A7243897320B929616 /* Pods_QuaNode.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B779F9322F6539F005C071A = {
 			isa = PBXGroup;
 			children = (
 				8B779F9E22F6539F005C071A /* QuaNode */,
+				8B779FBA22F65B38005C071A /* Extensions */,
 				8B779F9D22F6539F005C071A /* Products */,
+				8B779FB822F65AD8005C071A /* json Files */,
+				FE5DC5DE4FE4A69B75172D12 /* Pods */,
+				3C24F5D89DB394215B17D1BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +81,39 @@
 			children = (
 				8B779F9F22F6539F005C071A /* AppDelegate.swift */,
 				8B779FA122F6539F005C071A /* ViewController.swift */,
+				8B779FB122F65958005C071A /* UIView+constraints.swift */,
+				8B779FB322F659E3005C071A /* CountryViewController.swift */,
 				8B779FA322F6539F005C071A /* Main.storyboard */,
 				8B779FA622F653A1005C071A /* Assets.xcassets */,
 				8B779FA822F653A1005C071A /* LaunchScreen.storyboard */,
 				8B779FAB22F653A1005C071A /* Info.plist */,
 			);
 			path = QuaNode;
+			sourceTree = "<group>";
+		};
+		8B779FB822F65AD8005C071A /* json Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B779FB522F65AA8005C071A /* cities.json */,
+			);
+			path = "json Files";
+			sourceTree = "<group>";
+		};
+		8B779FBA22F65B38005C071A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B779FBB22F65B6E005C071A /* Sequence+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE5DC5DE4FE4A69B75172D12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAA6BEECCFD748FDFF2DB185 /* Pods-QuaNode.debug.xcconfig */,
+				8E0D0046E88ABFE505F8CE9F /* Pods-QuaNode.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +123,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B779FAE22F653A1005C071A /* Build configuration list for PBXNativeTarget "QuaNode" */;
 			buildPhases = (
+				AD313FFBA76EDD86412AB355 /* [CP] Check Pods Manifest.lock */,
 				8B779F9822F6539F005C071A /* Sources */,
 				8B779F9922F6539F005C071A /* Frameworks */,
 				8B779F9A22F6539F005C071A /* Resources */,
+				095F1521559C559363163A9F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B779FB622F65AA8005C071A /* cities.json in Resources */,
 				8B779FAA22F653A1005C071A /* LaunchScreen.storyboard in Resources */,
 				8B779FA722F653A1005C071A /* Assets.xcassets in Resources */,
 				8B779FA522F6539F005C071A /* Main.storyboard in Resources */,
@@ -130,12 +185,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		095F1521559C559363163A9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuaNode/Pods-QuaNode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuaNode/Pods-QuaNode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuaNode/Pods-QuaNode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD313FFBA76EDD86412AB355 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuaNode-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8B779F9822F6539F005C071A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B779FBC22F65B6E005C071A /* Sequence+Extension.swift in Sources */,
 				8B779FA222F6539F005C071A /* ViewController.swift in Sources */,
+				8B779FB422F659E3005C071A /* CountryViewController.swift in Sources */,
+				8B779FB222F65958005C071A /* UIView+constraints.swift in Sources */,
 				8B779FA022F6539F005C071A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,6 +380,7 @@
 		};
 		8B779FAF22F653A1005C071A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAA6BEECCFD748FDFF2DB185 /* Pods-QuaNode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +399,7 @@
 		};
 		8B779FB022F653A1005C071A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E0D0046E88ABFE505F8CE9F /* Pods-QuaNode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

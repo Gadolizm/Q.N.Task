@@ -1,0 +1,20 @@
+PODS:
+  - ObjectMapper (3.5.1)
+  - Parchment (1.6.0)
+
+DEPENDENCIES:
+  - ObjectMapper (~> 3.4)
+  - Parchment
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ObjectMapper
+    - Parchment
+
+SPEC CHECKSUMS:
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  Parchment: d3a7b367c529fa6ef51aa43f5717a7ff36d4b1f5
+
+PODFILE CHECKSUM: a6a700ac07a8eb5d49211701d707f42e2bd6134f
+
+COCOAPODS: 1.7.5
