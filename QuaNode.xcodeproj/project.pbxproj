@@ -16,6 +16,7 @@
 		8B779FB422F659E3005C071A /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B779FB322F659E3005C071A /* CountryViewController.swift */; };
 		8B779FB622F65AA8005C071A /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B779FB522F65AA8005C071A /* cities.json */; };
 		8B779FBC22F65B6E005C071A /* Sequence+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B779FBB22F65B6E005C071A /* Sequence+Extension.swift */; };
+		8B779FBE22F78D80005C071A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B779FBD22F78D80005C071A /* City.swift */; };
 		F5EFAD431242FA76EE0126DF /* Pods_QuaNode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44E39A7243897320B929616 /* Pods_QuaNode.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,10 +28,11 @@
 		8B779FA622F653A1005C071A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B779FA922F653A1005C071A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B779FAB22F653A1005C071A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B779FB122F65958005C071A /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
+		8B779FB122F65958005C071A /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+constraints.swift"; path = "../QuaNode/UIView+constraints.swift"; sourceTree = "<group>"; };
 		8B779FB322F659E3005C071A /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		8B779FB522F65AA8005C071A /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 		8B779FBB22F65B6E005C071A /* Sequence+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extension.swift"; sourceTree = "<group>"; };
+		8B779FBD22F78D80005C071A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		8E0D0046E88ABFE505F8CE9F /* Pods-QuaNode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuaNode.release.xcconfig"; path = "Target Support Files/Pods-QuaNode/Pods-QuaNode.release.xcconfig"; sourceTree = "<group>"; };
 		AAA6BEECCFD748FDFF2DB185 /* Pods-QuaNode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuaNode.debug.xcconfig"; path = "Target Support Files/Pods-QuaNode/Pods-QuaNode.debug.xcconfig"; sourceTree = "<group>"; };
 		B44E39A7243897320B929616 /* Pods_QuaNode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuaNode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,8 +83,8 @@
 			children = (
 				8B779F9F22F6539F005C071A /* AppDelegate.swift */,
 				8B779FA122F6539F005C071A /* ViewController.swift */,
-				8B779FB122F65958005C071A /* UIView+constraints.swift */,
 				8B779FB322F659E3005C071A /* CountryViewController.swift */,
+				8B779FBD22F78D80005C071A /* City.swift */,
 				8B779FA322F6539F005C071A /* Main.storyboard */,
 				8B779FA622F653A1005C071A /* Assets.xcassets */,
 				8B779FA822F653A1005C071A /* LaunchScreen.storyboard */,
@@ -102,6 +104,7 @@
 		8B779FBA22F65B38005C071A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B779FB122F65958005C071A /* UIView+constraints.swift */,
 				8B779FBB22F65B6E005C071A /* Sequence+Extension.swift */,
 			);
 			path = Extensions;
@@ -234,6 +237,7 @@
 			files = (
 				8B779FBC22F65B6E005C071A /* Sequence+Extension.swift in Sources */,
 				8B779FA222F6539F005C071A /* ViewController.swift in Sources */,
+				8B779FBE22F78D80005C071A /* City.swift in Sources */,
 				8B779FB422F659E3005C071A /* CountryViewController.swift in Sources */,
 				8B779FB222F65958005C071A /* UIView+constraints.swift in Sources */,
 				8B779FA022F6539F005C071A /* AppDelegate.swift in Sources */,

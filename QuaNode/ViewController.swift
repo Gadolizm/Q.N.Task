@@ -9,72 +9,56 @@
 
 import UIKit
 import Parchment
+import ObjectMapper
+
+var cities = [City]()
+var isSearching = false
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var citiesSearchBar: UISearchBar!
-    // Let's start by creating an array of citites that we
-    // will use to generate some view controllers.
-    fileprivate let countries = [
-        "Oslo",
-        "Stockholm",
-        "Tokyo",
-        "Barcelona",
-        "Vancouver",
-        "Berlin",
-        "Shanghai",
-        "London",
-        "Paris",
-        "Chicago",
-        "Madrid",
-        "Munich",
-        "Toronto",
-        "Sydney",
-        "Melbourne"
-    ]
-    var country = [String]()
+    var countryCities = [City]()
+    var currentViewController: CountryViewController?
+    var countries = [String]()
     var uniqueCountries = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureJsonFile()
+        configurePagingViewController()
         
-        
+    }
+    
+    
+    func configureJsonFile()  {
         
         guard let path = Bundle.main.path(forResource: "cities", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
         
         do {
             let data = try Data(contentsOf: url)
+            
+            
+            
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            //                print(json)
-            //
-            //                guard let array = json as? [String: Any] else { return }
-            //
-            //
-            //                    print(array)
             
-            guard let cities = json as? [[String: Any]] else {
-                return
+            let jsonCities = Mapper<City>().mapArray(JSONArray: json as! [[String : Any]])
+            
+            for city in jsonCities{
+                cities.append(city)
+                countries.append(city.country!)
+                
             }
-            //                "name": "Pas de la Casa",
-            //                "lat": "42.54277",
-            //                "lng": "1.73361"
-            
-            for dic in cities{
-                country.append(dic["country"] as! String)
-                //                    print(country) //Output
-            }
-            //
-            
-            
             
         }
         catch {
             print(error)
         }
-        uniqueCountries = country.unique()
+        uniqueCountries = countries.unique()
         
-        
+    }
+    
+    func configurePagingViewController()  {
         
         let pagingViewController = PagingViewController<PagingIndexItem>()
         pagingViewController.dataSource = self
@@ -101,12 +85,15 @@ extension ViewController: PagingViewControllerDataSource {
             return PagingIndexItem(index: index, title: uniqueCountries[index - 1]) as! T
             
         }
+        
     }
     
     func pagingViewController<T>(_ pagingViewController: PagingViewController<T>, viewControllerForIndex index: Int) -> UIViewController {
         if (index == 0)
         {
-            return CountryViewController(title: "ALL")
+            let controller = CountryViewController(title: "ALL")
+            currentViewController = controller
+            return controller
         } else {
             
             return CountryViewController(title: uniqueCountries[index - 1])
@@ -116,7 +103,6 @@ extension ViewController: PagingViewControllerDataSource {
     }
     
     func numberOfViewControllers<T>(in: PagingViewController<T>) -> Int {
-        print(uniqueCountries.count)
         return uniqueCountries.count + 1
     }
     
@@ -124,12 +110,7 @@ extension ViewController: PagingViewControllerDataSource {
 
 extension ViewController: PagingViewControllerDelegate {
     
-    // We want the size of our paging items to equal the width of the
-    // city title. Parchment does not support self-sizing cells at
-    // the moment, so we have to handle the calculation ourself. We
-    // can access the title string by casting the paging item to a
-    // PagingTitleItem, which is the PagingItem type used by
-    // FixedPagingViewController.
+    
     func pagingViewController<T>(_ pagingViewController: PagingViewController<T>, widthForPagingItem pagingItem: T, isSelected: Bool) -> CGFloat? {
         guard let item = pagingItem as? PagingIndexItem else { return 0 }
         
@@ -145,13 +126,47 @@ extension ViewController: PagingViewControllerDelegate {
         let width = ceil(rect.width) + insets.left + insets.right
         
         if isSelected {
+            
             return width * 1.5
         } else {
             return width
         }
     }
     
+    func pagingViewController<T>(_ pagingViewController: PagingViewController<T>, didScrollToItem pagingItem: T, startingViewController: UIViewController?, destinationViewController: UIViewController, transitionSuccessful: Bool) where T : PagingItem, T : Comparable, T : Hashable {
+        currentViewController = destinationViewController as? CountryViewController
+        
+    }
 }
 
+extension ViewController : UISearchBarDelegate
+{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == ""
+        {
+            isSearching = false
+            view.endEditing(true)
+            
+        } else
+        {
+            isSearching = true
+            currentViewController?.filteredCountryCities = currentViewController?.countryCities.filter({($0.name?.lowercased().contains(searchBar.text!.lowercased()))! } ) ?? []
+            self.reload()
+            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.reload), object: nil)
+            self.perform(#selector(self.reload), with: nil, afterDelay: 0.5)
+            
+        }
+        
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)  {
+        searchBar.resignFirstResponder()
+    }
+    
+    @objc func reload() {
+        currentViewController?.myTableView.reloadData()
+    }
+    
+}
 
 

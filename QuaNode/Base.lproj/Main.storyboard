@@ -31,8 +31,7 @@
         <!--Countries-->
         <scene sceneID="PJK-aM-DLK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ICu-DR-30M" sceneMemberID="firstResponder"/>
-                <viewController id="HFC-Jz-Q8i" customClass="ViewController" customModule="DelegateExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HFC-Jz-Q8i" customClass="ViewController" customModule="QuaNode" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0fB-KL-1xC"/>
                         <viewControllerLayoutGuide type="bottom" id="1in-9u-Pfu"/>
@@ -47,6 +46,9 @@
                                     <constraint firstAttribute="height" constant="60" id="1KO-lX-UzT"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HFC-Jz-Q8i" id="3rv-e7-Woq"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,6 +64,7 @@
                         <outlet property="citiesSearchBar" destination="Ubn-Jf-4F7" id="Qzv-eb-hUN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICu-DR-30M" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
